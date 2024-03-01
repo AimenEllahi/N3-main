@@ -30,32 +30,26 @@ export default function Display() {
       style={{
         backgroundImage: `url(/N3_Assets/Display/bg.png)`,
       }}
-      className="display-container"
+      className='display-container'
     >
-      <div className="display-icon-header">
-        <div className="display-icon-div">
-          {/* <div className="display-img-div">
-            <img
-              src="/N1_Assets/Display/Amoledicon.svg"
-              className="display-icon-img"
-            />
-          </div> */}
-          <span className="display-icon-text-heading">
-            2K 120Hz LTPO AMOLED
+      <div className='display-icon-header'>
+        <div className='display-icon-div'>
+          <span className=' text-3xl mt-5 px-14 text-left'>
+            Dynamic 1-120Hz LTPO 1.5k AMOLED
           </span>
         </div>
       </div>
-      <div className="displaycamera-header">
-        <div className="displayicon-cam">
+      <div className='displaycamera-header'>
+        <div className='displayicon-cam'>
           <img
-            src="/N3_Assets/Display/Icons/Brightness.svg"
-            className="displayicon-cam-img"
+            src='/N3_Assets/Display/Icons/Brightness.svg'
+            className='displayicon-cam-img'
           />
         </div>
-        <div className="icon-cam">
+        <div className='icon-cam'>
           <img
-            src="/N3_Assets/Display/Icons/Dolby.svg"
-            className="displayicon-cam-img"
+            src='/N3_Assets/Display/Icons/Dolby.svg'
+            className='displayicon-cam-img'
           />
         </div>
       </div>

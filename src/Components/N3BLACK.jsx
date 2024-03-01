@@ -57,15 +57,15 @@ export function Model(props) {
   useEffect(() => {
     if (activeState === 3) {
       gsap.to(groupRef.current.position, {
-        x: 0.9,
-        y: 0.2,
+        x: 0.1,
+        y: -0.5,
         z: -8.6,
         duration: 1,
         onStart: () => {
           gsap.to(groupRef.current.rotation, {
-            x: -0.5,
-            y: 0.3,
-            z: 0.4,
+            x: 0,
+            y: 2.6,
+            z: 0,
             duration: 1,
           });
         },
@@ -110,13 +110,18 @@ export function Model(props) {
       });
     }
   }, [activeState]);
+
+  // const { position, rotation } = useControls("Camera", {
+  //   position: { value: [0.9, 0.2, -8.6], step: 0.1 },
+  //   rotation: { value: [-0.5, 0.3, 0.4], step: 0.01 },
+  // });
   return (
     <group>
       {activeState === 1 && (
         <Html position={[window.innerWidth < 440 ? -0.3 : 0, 0, -9]}>
-          <div className="color-container">
+          <div className='color-container'>
             <span
-              className="color-header"
+              className='color-header'
               style={{
                 top: window.innerWidth < 440 ? "77%" : "80%",
               }}
@@ -125,21 +130,21 @@ export function Model(props) {
             </span>
 
             <img
-              src="/assets/color_1.png"
+              src='/assets/color_1.png'
               onClick={() => setColor("#dfebf7")}
               className={`color-div ${
                 color === "#dfebf7" && "color-div-selected"
               } `}
             />
             <img
-              src="/assets/color_2.png"
+              src='/assets/color_2.png'
               onClick={() => setColor("#191a1c")}
               className={`color-div ${
                 color === "#191a1c" && "color-div-selected"
               } `}
             />
             <img
-              src="/assets/color_3.png"
+              src='/assets/color_3.png'
               onClick={() => setColor("#E0DDE6")}
               className={`color-div ${
                 color === "#E0DDE6" && "color-div-selected"
@@ -151,7 +156,14 @@ export function Model(props) {
       {groupRef.current && (activeState === 0 || activeState === 1) && (
         <CustomOrbitControl object={groupRef} />
       )}
-      <group {...props} dispose={null} scale={0.03} ref={groupRef}>
+      <group
+        // position={position}
+        // rotation={rotation}
+        {...props}
+        dispose={null}
+        scale={0.03}
+        ref={groupRef}
+      >
         <mesh
           geometry={nodes.Body10.geometry}
           material={materials["F_dded1460bc804eb2aae86975d35283e5.001"]}
@@ -209,7 +221,7 @@ export function Model(props) {
           scale={10}
         />
         <mesh
-          name="back"
+          name='back'
           material-color={activeState === 1 ? color : "#dfebf7"}
           material-roughness={0.8}
           geometry={nodes.Body106001.geometry}

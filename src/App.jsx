@@ -26,8 +26,8 @@ const Loader = () => {
 
   return (
     <Html center>
-      <div className="loading-container">
-        <div className="loading-bar-container">{progress.toFixed(0) + "%"}</div>
+      <div className='loading-container'>
+        <div className='loading-bar-container'>{progress.toFixed(0) + "%"}</div>
       </div>
     </Html>
   );
@@ -68,7 +68,7 @@ function CancelButton({ showImages, setShowImages }) {
     <MdCancel
       size={25}
       color={activeState === 2 ? "#fff" : activeState === 3 ? "#000" : "#fff"}
-      className="cancel-button"
+      className='cancel-button'
       onClick={handleClick}
       style={{
         zIndex: activeState === 0 ? -1 : 8,
@@ -87,115 +87,111 @@ function App() {
   const menuRef = useRef();
 
   return (
-    <div className="main-canvas-container">
-      <div
-        className="canvas-container-2"
-        style={{ width: "440px", height: "100vh" }}
-      >
-        <Canvas
-          style={{
-            zIndex: 0,
-            background:
-              activeState !== 0
-                ? activeState === 2
-                  ? "#fff"
-                  : activeState === 3 // Check if activeState is equal to 3
-                  ? "#fff" // If true, set color to "#fff"
-                  : "#000"
-                : "transparent",
-          }}
-        >
-          <ambientLight intensity={0.5} />
-          <directionalLight intensity={0.5} />
-          <Suspense fallback={<Loader />}>
-            <Environment
-              //attach file
-              files={"/venice_sunset_1k.hdr"}
-            />
-            {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
-            <ModelBlue setModelLoaded={setModelLoaded} />
-          </Suspense>
-
-          <Animation menuRef={menuRef} />
-        </Canvas>
-      </div>
-
-      <CancelButton showImages={showImages} setShowImages={setShowImages} />
-      {/* Performance container */}
-      {activeState === 4 && <Performance />}
-
-      {/*For camera container */}
-      {activeState === 2 && <Camera />}
-
-      {/*For display container */}
-      {activeState === 3 && <Display />}
-
-      {!modelLoaded && (
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img
-            src={
-              window.innerWidth < 468
-                ? "/assets/load-mobile.webp"
-                : "/assets/load-full.webp"
-            }
+    <>
+      <div className='main-canvas-container  '>
+        <div className='canvas-container-2 h-screen w-[440px] '>
+          <Canvas
             style={{
-              width: "100vw",
-              height: "100vh",
+              zIndex: 0,
+              background:
+                activeState !== 0
+                  ? activeState === 2
+                    ? "#fff"
+                    : activeState === 3 // Check if activeState is equal to 3
+                    ? "#fff" // If true, set color to "#fff"
+                    : "#000"
+                  : "transparent",
             }}
-          />
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight intensity={0.5} />
+            <Suspense fallback={<Loader />}>
+              <Environment
+                //attach file
+                files={"/venice_sunset_1k.hdr"}
+              />
+              {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
+              <ModelBlue setModelLoaded={setModelLoaded} />
+            </Suspense>
+
+            <Animation menuRef={menuRef} />
+          </Canvas>
         </div>
-      )}
+        {!modelLoaded && (
+          <div className='absolute top-0 left-[-50%] translate-x-[-20%] w-screen max-w-screen overflow-hidden h-full flex justify-center items-center'>
+            <img
+              src={
+                window.innerWidth < 468
+                  ? "/assets/load-mobile.webp"
+                  : "/assets/load-full.webp"
+              }
+              style={{
+                width: "100%",
+                objectFit: "cover",
+                height: "100vh",
+              }}
+            />
+          </div>
+        )}
 
-      {/*For menu container */}
-      {modelLoaded && (
-        <div ref={menuRef} className="menu-container">
-          {activeState === 2 ? (
-            <div className="menu-arrow-img" onClick={() => setShowImages(true)}>
-              <img className="arrow-up-img" src="/assets/up.png" />
-            </div>
-          ) : (
-            <>
-              <div className="icon-container" onClick={() => setActiveState(1)}>
-                {/* <img src='/assets/color.jpg' className='color-img-icon' /> */}
+        <CancelButton showImages={showImages} setShowImages={setShowImages} />
+        {/* Performance container */}
+        {activeState === 4 && <Performance />}
 
-                <div className="color-img-icon"></div>
-                <div className="color-white-bg"></div>
-                <div className="color-icon-text">Color</div>
-              </div>
-              <div className="icon-container" onClick={() => setActiveState(2)}>
-                <img src="/assets/home_3.png" className="camera-img-icon" />
-                <div className="camera-icon-text">Camera</div>
-              </div>
-              <div className="icon-container" onClick={() => setActiveState(3)}>
-                <img src="/assets/home_2.png" className="ecran-img-icon" />
-                <div className="ecran-icon-text">Display</div>
-              </div>
-              <div className="icon-container" onClick={() => setActiveState(4)}>
-                <img
-                  src="/assets/home_4.png"
-                  className="performance-img-icon"
-                />
-                <div className="performance-icon-text">Performance</div>
-              </div>
-            </>
-          )}
-        </div>
-      )}
+        {/*For camera container */}
+        {activeState === 2 && <Camera />}
 
-      {/*For gallery container */}
-      {activeState === 2 && showImages && <Gallery />}
-    </div>
+        {/*For display container */}
+        {activeState === 3 && <Display />}
+
+        {/*For menu container */}
+        {modelLoaded && activeState !== 2 && activeState !== 4 && (
+          <div ref={menuRef} className='menu-container'>
+            {
+              <>
+                <div
+                  className='icon-container'
+                  onClick={() => setActiveState(1)}
+                >
+                  {/* <img src='/assets/color.jpg' className='color-img-icon' /> */}
+
+                  <div className='color-img-icon'></div>
+                  <div className='color-white-bg'></div>
+                  <div className='color-icon-text'>Color</div>
+                </div>
+                <div
+                  className='icon-container'
+                  onClick={() => setActiveState(2)}
+                >
+                  <img src='/assets/home_3.png' className='camera-img-icon' />
+                  <div className='camera-icon-text'>Camera</div>
+                </div>
+                <div
+                  className='icon-container'
+                  onClick={() => setActiveState(3)}
+                >
+                  <img src='/assets/home_2.png' className='ecran-img-icon' />
+                  <div className='ecran-icon-text'>Display</div>
+                </div>
+                <div
+                  className='icon-container'
+                  onClick={() => setActiveState(4)}
+                >
+                  <img
+                    src='/assets/home_4.png'
+                    className='performance-img-icon'
+                  />
+                  <div className='performance-icon-text'>Performance</div>
+                </div>
+              </>
+            }
+          </div>
+        )}
+
+        {/*For gallery container */}
+        {activeState === 2 && showImages && <Gallery />}
+      </div>
+    </>
   );
 }
 

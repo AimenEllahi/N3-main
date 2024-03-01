@@ -24,23 +24,30 @@ export default function Camera() {
 
   return (
     <div
-      className="cam-container"
+      className='cam-container'
       ref={ref}
       style={{
         backgroundImage: `url(/N3_Assets/Camera/bg.png)`,
       }}
     >
-      <div className="camera-header">
-        <div className="header-img-container">
-          <img src="/N1_Assets/Camera/Icons/Leica.svg" className="header-img" />
-          <span className="icon-cam-heading">Leica 50MP Quad Cameras</span>
+      <div className='camera-header'>
+        <div className=' w-full flex items-center justify-center flex-col gap-5 '>
+          <img
+            src='/assets/Camera/Leica.svg'
+            className='w-20 object-contain z-[10]'
+          />
+          <span className=' !text-2xl w-full  !mt-4 font-medium'>
+            Leica 50MP Optical Lens System
+          </span>
           <hr
             style={{
               width: "30%",
               border: "1px solid #15F5BA",
             }}
           />
-          <span className="icon-cam-text">Ultra Vision Camera System</span>
+          <span className='italic font-normal !text-base'>
+            Summilux f/1.6 Ultra-Wide Aperture
+          </span>
         </div>
 
         {/* <div className='icon-cam'
