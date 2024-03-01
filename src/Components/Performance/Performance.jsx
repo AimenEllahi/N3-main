@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 const imageUrls = [
   "/N3_Assets/Performance/Charging/Charging.png",
-  "/N3_Assets/Performance/Snapdragon/bg.png",
+  "/N3_Assets/Performance/Snapdragon/Snapdragonbg.png",
   // Add URLs for the other backgrounds here
 ];
 
@@ -36,7 +36,29 @@ export default function Performance() {
       }}
     >
       <div className="performance-text-div">
-        {/* Add your content for each section here */}
+        <div className="charging-icon">
+          <img
+            src="/N1_Assets/Performance/Charging/icon.svg"
+            alt=""
+            className="icon-img"
+          />
+        </div>
+        <span
+        // className={`performance-text ${backgroundImage === 1 && "active"}`}
+        >
+          Large 5000mAh Battery
+        </span>
+        <hr
+          style={{
+            width: "30%",
+            border: "1px solid #15F5BA",
+          }}
+        />
+        <span
+        // className={`performance-text ${backgroundImage === 2 && "active"}`}
+        >
+          Snapdragon® 4 Gen 2 Mobile Platform
+        </span>
       </div>
       <div className="swipe-up-indicator" onClick={handleSwipeUp}>
         Swipe Up
