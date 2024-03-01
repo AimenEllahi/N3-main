@@ -18,6 +18,18 @@
   /* border: #fff 1px solid; */
 }
 
+.performance-container-outer {
+  border: #fff 1px solid;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  /* border: #fff 1px solid; */
+}
+
 .charging-icon {
   display: flex;
   justify-content: center;

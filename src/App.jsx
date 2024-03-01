@@ -108,7 +108,10 @@ function App() {
           <ambientLight intensity={0.5} />
           <directionalLight intensity={0.5} />
           <Suspense fallback={<Loader />}>
-            <Environment preset="sunset" />
+            <Environment
+              //attach file
+              files={"/venice_sunset_1k.hdr"}
+            />
             {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
             <ModelBlue setModelLoaded={setModelLoaded} />
           </Suspense>
