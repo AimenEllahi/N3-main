@@ -19,11 +19,46 @@ export default function Performance() {
       delay: 0.7,
     });
     perfContRef.current.style.zIndex = 6;
+
+    // Add event listener for swipe detection
+    perfContRef.current.addEventListener("touchstart", handleTouchStart, false);
+    perfContRef.current.addEventListener("touchmove", handleTouchMove, false);
+
+    return () => {
+      // Clean up event listeners on component unmount
+      perfContRef.current.removeEventListener(
+        "touchstart",
+        handleTouchStart,
+        false
+      );
+      perfContRef.current.removeEventListener(
+        "touchmove",
+        handleTouchMove,
+        false
+      );
+    };
   }, [activeSection]);
+
+  // Variables to store touch start position
+  let startY = 0;
+
+  const handleTouchStart = (e) => {
+    startY = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    const touchMoveY = e.touches[0].clientY;
+    const touchDiffY = touchMoveY - startY;
+
+    // Swipe up detected, change background
+    if (touchDiffY > 0) {
+      handleSwipeUp();
+    }
+  };
 
   const handleSwipeUp = () => {
     setActiveSection((prevSection) =>
-      prevSection < 3 ? prevSection + 1 : prevSection
+      prevSection < imageUrls.length - 1 ? prevSection + 1 : prevSection
     );
   };
 
@@ -43,22 +78,14 @@ export default function Performance() {
             className="icon-img"
           />
         </div>
-        <span
-        // className={`performance-text ${backgroundImage === 1 && "active"}`}
-        >
-          Large 5000mAh Battery
-        </span>
+        <span>Large 5000mAh Battery</span>
         <hr
           style={{
             width: "30%",
             border: "1px solid #15F5BA",
           }}
         />
-        <span
-        // className={`performance-text ${backgroundImage === 2 && "active"}`}
-        >
-          Snapdragon® 4 Gen 2 Mobile Platform
-        </span>
+        <span>Snapdragon® 4 Gen 2 Mobile Platform</span>
       </div>
       <div className="swipe-up-indicator" onClick={handleSwipeUp}>
         Swipe Up
