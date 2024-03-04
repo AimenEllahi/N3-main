@@ -119,7 +119,8 @@ function App() {
             <Suspense fallback={<Loader />}>
               <Environment
                 //attach file
-                files={"/venice_sunset_1k.hdr"}
+
+                preset='apartment'
               />
               {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
               <ModelBlue setModelLoaded={setModelLoaded} />
