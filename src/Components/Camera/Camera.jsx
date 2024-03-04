@@ -24,48 +24,48 @@ export default function Camera() {
 
   return (
     <div
-      className="cam-container"
+      className='cam-container'
       ref={ref}
       style={{
         backgroundImage: `url(/N1_Assets/Camera/bg.png)`,
       }}
     >
-      <div className="camera-header">
-        <div className="header-img-container">
-          <img src="/N1_Assets/Camera/Icons/Leica.svg" className="header-img" />
-          <span className="icon-cam-heading">Leica 50MP Quad Cameras</span>
+      <div className='camera-header '>
+        <div className='header-img-container'>
+          <img src='/N1_Assets/Camera/Icons/Leica.svg' className='header-img' />
+          <span className='icon-cam-heading'>Leica 50MP Quad Cameras</span>
         </div>
-        <div className="icon-cam">
+        <div className='icon-cam'>
           <img
-            src="/N1_Assets/Camera/Icons/Sensor.svg"
-            className="icon-cam-img"
+            src='/N1_Assets/Camera/Icons/Sensor.svg'
+            className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">50MP</span> */}
-          <span className="icon-cam-text">All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
         </div>
-        <div className="icon-cam">
+        <div className='icon-cam'>
           <img
-            src="/N1_Assets/Camera/Icons/Aperture.svg"
-            className="icon-cam-img"
+            src='/N1_Assets/Camera/Icons/Aperture.svg'
+            className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className="icon-cam-text">All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
         </div>
-        <div className="icon-cam">
+        <div className='icon-cam'>
           <img
-            src="/N1_Assets/Camera/Icons/Camera.svg"
-            className="icon-cam-img"
+            src='/N1_Assets/Camera/Icons/Camera.svg'
+            className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className="icon-cam-text">All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
         </div>
-        <div className="icon-cam">
+        <div className='icon-cam'>
           <img
-            src="/N1_Assets/Camera/Icons/Zoom.svg"
-            className="icon-cam-img"
+            src='/N1_Assets/Camera/Icons/Zoom.svg'
+            className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className="icon-cam-text">All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
         </div>
         {/* <div className='icon-cam'
            style={{

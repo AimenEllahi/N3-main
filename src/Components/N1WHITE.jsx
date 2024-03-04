@@ -6,11 +6,6 @@ import { gsap } from "gsap";
 import * as THREE from "three";
 import useAnimationStore from "../Store/AnimationState";
 const colorArray = [
-  // {
-  //   name: "cool green",
-  //   hex: "#D8E8D3",
-  //   imageUrl: "/assets/color_1.png",
-  // },
   {
     name: "Jade Black",
     hex: "#191a1c",
@@ -111,9 +106,9 @@ export function Model(props) {
     <group>
       {activeState === 1 && (
         <Html position={[window.innerWidth < 440 ? -0.3 : 0, 0, -9]}>
-          <div className="color-container">
+          <div className='color-container'>
             <span
-              className="color-header"
+              className='color-header'
               style={{
                 top: window.innerWidth < 440 ? "77%" : "80%",
               }}
@@ -129,14 +124,14 @@ export function Model(props) {
               } `}
             /> */}
             <img
-              src="/assets/color_2.png"
+              src='/assets/color_2.png'
               onClick={() => setColor("#191a1c")}
               className={`color-div ${
                 color === "#191a1c" && "color-div-selected"
               } `}
             />
             <img
-              src="/assets/color_3.png"
+              src='/assets/color_3.png'
               onClick={() => setColor("#E0DDE6")}
               className={`color-div ${
                 color === "#E0DDE6" && "color-div-selected"
@@ -508,7 +503,9 @@ export function Model(props) {
           position={[0, -18.198, -1.138]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
-        />
+        >
+          <meshStandardMaterial color={"#000"} roughness={0.3} />
+        </mesh>
         <mesh
           castShadow
           receiveShadow
@@ -737,7 +734,7 @@ export function Model(props) {
           scale={10}
         />
         <mesh
-          name="back"
+          name='back'
           material-color={activeState === 1 ? color : "#dfebf7"}
           material-roughness={0.8}
           castShadow
@@ -3189,18 +3186,7 @@ export function Model(props) {
           position={[-5.932, 61.92, -5.605]}
           scale={[10.969, 8.574, 2.186]}
         />
-        {/* <pointLight
-          intensity={54351.413}
-          decay={2}
-          position={[-57.811, 84.049, -22.411]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        />
-        <pointLight
-          intensity={54351.413}
-          decay={2}
-          position={[77.649, 66.424, -31.803]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        /> */}
+
         <mesh
           castShadow
           receiveShadow
