@@ -9,7 +9,7 @@ import {
   useProgress,
   Html,
 } from "@react-three/drei";
-import { Model as ModelBlue } from "./Components/N3BLACK";
+import { Model as ModelBlue } from "./Components/N1WHITE";
 import { TextureLoader } from "three";
 import useAnimationStore from "./Store/AnimationState";
 import Animation from "./Components/Animations";
@@ -26,8 +26,8 @@ const Loader = () => {
 
   return (
     <Html center>
-      <div className='loading-container'>
-        <div className='loading-bar-container'>{progress.toFixed(0) + "%"}</div>
+      <div className="loading-container">
+        <div className="loading-bar-container">{progress.toFixed(0) + "%"}</div>
       </div>
     </Html>
   );
@@ -67,8 +67,8 @@ function CancelButton({ showImages, setShowImages }) {
   return (
     <MdCancel
       size={25}
-      color={activeState === 2 ? "#fff" : activeState === 3 ? "#000" : "#fff"}
-      className='cancel-button'
+      color={activeState === 2 ? "#000" : activeState === 3 ? "#fff" : "#fff"}
+      className="cancel-button"
       onClick={handleClick}
       style={{
         zIndex: activeState === 0 ? -1 : 8,
@@ -89,9 +89,9 @@ function App() {
   return (
     <>
       {!modelLoaded && (
-        <div className='absolute -top-0 left-0 max-w-screen w-screen overflow-hidden h-screen flex justify-center items-center'>
+        <div className="absolute -top-0 left-0 max-w-screen w-screen overflow-hidden h-screen flex justify-center items-center">
           <img
-            src={"/assets/loader/loader.png"}
+            src={"/N1_Assets/Loaderbg.png"}
             style={{
               objectFit: "contain",
               height: "100vh",
@@ -99,8 +99,8 @@ function App() {
           />
         </div>
       )}
-      <div className='main-canvas-container relative  '>
-        <div className='canvas-container-2 h-screen w-[440px] relative'>
+      <div className="main-canvas-container relative  ">
+        <div className="canvas-container-2 h-screen w-[440px] relative">
           <Canvas
             style={{
               zIndex: 0,
@@ -120,7 +120,7 @@ function App() {
               <Environment
                 //attach file
 
-                preset='apartment'
+                preset="apartment"
               />
               {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
               <ModelBlue setModelLoaded={setModelLoaded} />
@@ -142,42 +142,42 @@ function App() {
 
         {/*For menu container */}
         {modelLoaded && activeState !== 2 && activeState !== 4 && (
-          <div ref={menuRef} className='menu-container'>
+          <div ref={menuRef} className="menu-container">
             {
               <>
                 <div
-                  className='icon-container'
+                  className="icon-container"
                   onClick={() => setActiveState(1)}
                 >
                   {/* <img src='/assets/color.jpg' className='color-img-icon' /> */}
 
-                  <div className='color-img-icon'></div>
-                  <div className='color-white-bg'></div>
-                  <div className='color-icon-text'>Color</div>
+                  <div className="color-img-icon"></div>
+                  <div className="color-white-bg"></div>
+                  <div className="color-icon-text">Color</div>
                 </div>
                 <div
-                  className='icon-container'
+                  className="icon-container"
                   onClick={() => setActiveState(2)}
                 >
-                  <img src='/assets/home_3.png' className='camera-img-icon' />
-                  <div className='camera-icon-text'>Camera</div>
+                  <img src="/assets/home_3.png" className="camera-img-icon" />
+                  <div className="camera-icon-text">Camera</div>
                 </div>
                 <div
-                  className='icon-container'
+                  className="icon-container"
                   onClick={() => setActiveState(3)}
                 >
-                  <img src='/assets/home_2.png' className='ecran-img-icon' />
-                  <div className='ecran-icon-text'>Display</div>
+                  <img src="/assets/home_2.png" className="ecran-img-icon" />
+                  <div className="ecran-icon-text">Display</div>
                 </div>
                 <div
-                  className='icon-container'
+                  className="icon-container"
                   onClick={() => setActiveState(4)}
                 >
                   <img
-                    src='/assets/home_4.png'
-                    className='performance-img-icon'
+                    src="/assets/home_4.png"
+                    className="performance-img-icon"
                   />
-                  <div className='performance-icon-text'>Performance</div>
+                  <div className="performance-icon-text">Performance</div>
                 </div>
               </>
             }

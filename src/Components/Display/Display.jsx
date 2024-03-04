@@ -28,29 +28,33 @@ export default function Display() {
     <div
       ref={ref}
       style={{
-        backgroundImage: `url(/N3_Assets/Display/bg.png)`,
+        backgroundImage: `url(/N1_Assets/Display/Bg.png)`,
       }}
-      className='display-container'
+      className="display-container"
     >
-      <div className='display-icon-header'>
-        <div className='display-icon-div'>
-          <span className=' text-3xl mt-5 px-14 text-left'>
-            Dynamic 1-120Hz LTPO 1.5k AMOLED
+      <div className="display-icon-header">
+        <div className="display-icon-div">
+          <div className="display-img-div">
+            <img
+              src="/N1_Assets/Display/Amoledicon.svg"
+              className="display-icon-img"
+            />
+          </div>
+          <span className="display-icon-text-heading">
+            2K 120Hz LTPO AMOLED
           </span>
-        </div>
-      </div>
-      <div className='displaycamera-header mt-5 flex flex-col items-center justify-center gap-y-14'>
-        <div className='displayicon-cam  scale-125 h-10'>
-          <img
-            src='/N3_Assets/Display/Icons/Brightness.svg'
-            className='displayicon-cam-img'
+          <span className="display-icon-text">
+            Quad Curved Display with Bolby Vision®
+          </span>
+          <hr
+            style={{
+              width: "30%",
+              border: "1px solid #15F5BA",
+            }}
           />
-        </div>
-        <div className='icon-cam  scale-125'>
-          <img
-            src='/N3_Assets/Display/Icons/Dolby.svg'
-            className='displayicon-cam-img'
-          />
+          <span className="display-icon-text">
+            Xiaomi Ceramic Glass Protection
+          </span>
         </div>
       </div>
     </div>
