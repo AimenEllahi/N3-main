@@ -7,6 +7,7 @@ export default function Animations({ menuRef }) {
   const activeState = useAnimationStore((state) => state.activeState);
   const { camera } = useThree();
   useEffect(() => {
+    if (!menuRef.current) return;
     switch (activeState) {
       case 0:
         gsap.to(camera.position, {
@@ -56,6 +57,6 @@ export default function Animations({ menuRef }) {
       default:
         break;
     }
-  }, [activeState]);
+  }, [activeState, menuRef.current]);
   return null;
 }

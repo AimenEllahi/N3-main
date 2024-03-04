@@ -49,24 +49,6 @@ export default function Camera() {
             Summilux f/1.6 Ultra-Wide Aperture
           </span>
         </div>
-
-        {/* <div className='icon-cam'
-           style={{
-            transform: "translateY(-40px)"
-          }}>
-          <img
-            src='/assets/icons_camera/03.svg'
-            className='icon-cam-img'
-            style={{
-              // border : "2px solid #000",
-              width: "80px",
-              height: "80px",
-             
-            }}
-          />
-          <span className='icon-cam-heading'>8MP</span>
-          <span className='icon-cam-text'>Ultra - wide</span>
-        </div> */}
       </div>
     </div>
   );

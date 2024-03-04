@@ -39,14 +39,14 @@ export default function Display() {
           </span>
         </div>
       </div>
-      <div className='displaycamera-header'>
-        <div className='displayicon-cam'>
+      <div className='displaycamera-header mt-5 flex flex-col items-center justify-center gap-y-14'>
+        <div className='displayicon-cam  scale-125 h-10'>
           <img
             src='/N3_Assets/Display/Icons/Brightness.svg'
             className='displayicon-cam-img'
           />
         </div>
-        <div className='icon-cam'>
+        <div className='icon-cam  scale-125'>
           <img
             src='/N3_Assets/Display/Icons/Dolby.svg'
             className='displayicon-cam-img'

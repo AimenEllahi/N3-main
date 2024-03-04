@@ -11,8 +11,8 @@ import * as THREE from "three";
 import useAnimationStore from "../Store/AnimationState";
 const colorArray = [
   {
-    name: "Pastel Blue",
-    hex: "#dfebf7",
+    name: "cool green",
+    hex: "#D8E8D3",
     imageUrl: "/assets/color_1.png",
   },
   {
@@ -21,7 +21,7 @@ const colorArray = [
     imageUrl: "/assets/color_2.png",
   },
   {
-    name: "Moonstone Silver",
+    name: "Moon White",
     hex: "#E0DDE6",
     imageUrl: "/assets/color_3.png",
   },
@@ -32,7 +32,7 @@ export function Model(props) {
   const { camera, gl, scene } = useThree();
   const activeState = useAnimationStore((state) => state.activeState);
 
-  const [color, setColor] = useState("#dfebf7");
+  const [color, setColor] = useState("#D8E8D3");
   const groupRef = useRef();
 
   useEffect(() => {
@@ -131,9 +131,9 @@ export function Model(props) {
 
             <img
               src='/assets/color_1.png'
-              onClick={() => setColor("#dfebf7")}
+              onClick={() => setColor("#D8E8D3")}
               className={`color-div ${
-                color === "#dfebf7" && "color-div-selected"
+                color === "#D8E8D3" && "color-div-selected"
               } `}
             />
             <img

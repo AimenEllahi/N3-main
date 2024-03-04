@@ -88,8 +88,19 @@ function App() {
 
   return (
     <>
-      <div className='main-canvas-container  '>
-        <div className='canvas-container-2 h-screen w-[440px] '>
+      {!modelLoaded && (
+        <div className='absolute -top-0 left-0 max-w-screen w-screen overflow-hidden h-screen flex justify-center items-center'>
+          <img
+            src={"/assets/loader/loader.png"}
+            style={{
+              objectFit: "contain",
+              height: "100vh",
+            }}
+          />
+        </div>
+      )}
+      <div className='main-canvas-container relative  '>
+        <div className='canvas-container-2 h-screen w-[440px] relative'>
           <Canvas
             style={{
               zIndex: 0,
@@ -117,22 +128,6 @@ function App() {
             <Animation menuRef={menuRef} />
           </Canvas>
         </div>
-        {!modelLoaded && (
-          <div className='absolute top-0 left-[-50%] translate-x-[-20%] w-screen max-w-screen overflow-hidden h-full flex justify-center items-center'>
-            <img
-              src={
-                window.innerWidth < 468
-                  ? "/assets/load-mobile.webp"
-                  : "/assets/load-full.webp"
-              }
-              style={{
-                width: "100%",
-                objectFit: "cover",
-                height: "100vh",
-              }}
-            />
-          </div>
-        )}
 
         <CancelButton showImages={showImages} setShowImages={setShowImages} />
         {/* Performance container */}
