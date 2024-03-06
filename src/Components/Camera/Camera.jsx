@@ -41,7 +41,7 @@ export default function Camera() {
             className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">50MP</span> */}
-          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>All-New 2.54cm(1) Sensor</span>
         </div>
         <div className='icon-cam'>
           <img
@@ -49,7 +49,7 @@ export default function Camera() {
             className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>f/1.63-4.0 Variable Aperture</span>
         </div>
         <div className='icon-cam'>
           <img
@@ -57,7 +57,7 @@ export default function Camera() {
             className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>Leica Dual Telephoto Cameras</span>
         </div>
         <div className='icon-cam'>
           <img
@@ -65,7 +65,7 @@ export default function Camera() {
             className='icon-cam-img'
           />
           {/* <span className="icon-cam-heading">2MP</span> */}
-          <span className='icon-cam-text'>All new 2 52cm(1) Sensor</span>
+          <span className='icon-cam-text'>12-120mm | 120x Zoom</span>
         </div>
         {/* <div className='icon-cam'
            style={{

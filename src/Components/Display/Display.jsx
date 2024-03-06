@@ -30,21 +30,21 @@ export default function Display() {
       style={{
         backgroundImage: `url(/N1_Assets/Display/Bg.png)`,
       }}
-      className="display-container"
+      className='display-container'
     >
-      <div className="display-icon-header">
-        <div className="display-icon-div">
-          <div className="display-img-div">
+      <div className='display-icon-header'>
+        <div className='display-icon-div'>
+          <div className='display-img-div'>
             <img
-              src="/N1_Assets/Display/Amoledicon.svg"
-              className="display-icon-img"
+              src='/N1_Assets/Display/Amoledicon.svg'
+              className='display-icon-img'
             />
           </div>
-          <span className="display-icon-text-heading">
+          <span className='display-icon-text-heading'>
             2K 120Hz LTPO AMOLED
           </span>
-          <span className="display-icon-text">
-            Quad Curved Display with Bolby Vision®
+          <span className='display-icon-text'>
+            Quad Curved Display with Dolby Vision®
           </span>
           <hr
             style={{
@@ -52,7 +52,7 @@ export default function Display() {
               border: "1px solid #15F5BA",
             }}
           />
-          <span className="display-icon-text">
+          <span className='display-icon-text'>
             Xiaomi Ceramic Glass Protection
           </span>
         </div>
