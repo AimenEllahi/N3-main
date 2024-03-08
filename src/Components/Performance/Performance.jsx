@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import { MoveDown } from "lucide-react";
-import { gsap } from "gsap";
-
-const imageUrls = [
-  "/N3_Assets/Performance/Charging/Charging.png",
-  "/N3_Assets/Performance/Snapdragon/Snapdragonbg.png",
-
-  // Add URLs for the other backgrounds here
-];
 
 const PerformanceSection = ({ background, info, isScroll }) => {
   return (
@@ -62,13 +54,13 @@ export default function Performance() {
       className='h-screen overflow-y-scroll w-full absolute top-0  bg-white z-[5] hide-scrollbar'
     >
       <PerformanceSection
-        background={"/N1_Assets/Performance/Charging/bg.png"}
+        background={"./N1_Assets/Performance/Charging/bg.png"}
         info={charging}
         isScroll
       />
 
       <PerformanceSection
-        background={"/N1_Assets/Performance/Snapdragon/bg.png"}
+        background={"./N1_Assets/Performance/Snapdragon/bg.png"}
         info={snapdragon}
       />
     </div>

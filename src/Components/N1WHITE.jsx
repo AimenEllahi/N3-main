@@ -7,20 +7,20 @@ import * as THREE from "three";
 import useAnimationStore from "../Store/AnimationState";
 const colorArray = [
   {
-    name: "Jade Black",
+    name: "Black",
     hex: "#191a1c",
-    imageUrl: "/assets/color_2.png",
+    imageUrl: "./images/color_2.png",
   },
   {
-    name: "Moon White",
+    name: "White",
     hex: "#E0DDE6",
-    imageUrl: "/assets/color_3.png",
+    imageUrl: "./images/color_3.png",
   },
 ];
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF("/Models/n1-white.glb");
-  const { camera, gl, scene } = useThree();
+  const { nodes, materials } = useGLTF("./Models/n1-white.glb");
+
   const activeState = useAnimationStore((state) => state.activeState);
 
   const [color, setColor] = useState("#191a1c");
@@ -106,32 +106,32 @@ export function Model(props) {
     <group>
       {activeState === 1 && (
         <Html position={[window.innerWidth < 440 ? -0.3 : 0, 0, -9]}>
-          <div className="color-container">
+          <div className='color-container'>
             <span
-              className="color-header"
+              className='color-header'
               style={{
-                top: window.innerWidth < 440 ? "77%" : "80%",
+                top: window.innerWidth < 440 ? "77%" : "84%",
               }}
             >
               {colorArray.filter((item) => item.hex === color)[0].name}
             </span>
 
             {/* <img
-              src="/assets/color_1.png"
+              src="./images/color_1.png"
               onClick={() => setColor("#D8E8D3")}
               className={`color-div ${
                 color === "#D8E8D3" && "color-div-selected"
               } `}
             /> */}
             <img
-              src="/assets/color_2.png"
+              src='./images/color_2.png'
               onClick={() => setColor("#191a1c")}
               className={`color-div ${
                 color === "#191a1c" && "color-div-selected"
               } `}
             />
             <img
-              src="/assets/color_3.png"
+              src='./images/color_3.png'
               onClick={() => setColor("#E0DDE6")}
               className={`color-div ${
                 color === "#E0DDE6" && "color-div-selected"
@@ -1084,7 +1084,7 @@ export function Model(props) {
           scale={10}
         />
         <mesh
-          name="back"
+          name='back'
           material-color={activeState === 1 ? color : "#dfebf7"}
           material-roughness={0.8}
           castShadow
@@ -2595,7 +2595,7 @@ export function Model(props) {
   );
 }
 
-useGLTF.preload("/n1-white.glb");
+useGLTF.preload("./Models/n1-white.glb");
 
 const CustomOrbitControl = ({ object }) => {
   const { gl, camera } = useThree();
