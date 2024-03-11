@@ -176,9 +176,6 @@ function App() {
             }
           </div>
         )}
-
-        {/*For gallery container */}
-        {activeState === 2 && showImages && <Gallery />}
       </div>
     </>
   );
