@@ -143,7 +143,13 @@ export function Model(props) {
       {groupRef.current && (activeState === 0 || activeState === 1) && (
         <CustomOrbitControl object={groupRef} />
       )}
-      <group {...props} dispose={null} scale={0.025} ref={groupRef}>
+      <group ref={groupRef}>
+        <mesh>
+          <sphereBufferGeometry args={[1, 32, 32]} />
+          <meshStandardMaterial color={"#ff1242"} />
+        </mesh>
+      </group>
+      {/* <group dispose={null} scale={0.025} ref={groupRef}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <mesh
             geometry={nodes.Body2002_face.geometry}
@@ -2590,7 +2596,7 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
           scale={10}
         />
-      </group>
+      </group> */}
     </group>
   );
 }

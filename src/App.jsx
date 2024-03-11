@@ -3,7 +3,7 @@ import "./App.css";
 // import LoaderComponent from "./Components/LoaderComponent";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, useProgress, Html } from "@react-three/drei";
-import { Model as ModelBlue } from "./Components/N3BLACK";
+import { Model as ModelBlue } from "./Components/N1WHITE";
 import { TextureLoader } from "three";
 import useAnimationStore from "./Store/AnimationState";
 import Animation from "./Components/Animations";
