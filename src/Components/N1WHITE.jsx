@@ -106,9 +106,9 @@ export function Model(props) {
     <group>
       {activeState === 1 && (
         <Html position={[window.innerWidth < 440 ? -0.3 : 0, 0, -9]}>
-          <div className='color-container'>
+          <div className="color-container">
             <span
-              className='color-header'
+              className="color-header"
               style={{
                 top: window.innerWidth < 440 ? "77%" : "84%",
               }}
@@ -124,14 +124,14 @@ export function Model(props) {
               } `}
             /> */}
             <img
-              src='./images/color_2.png'
+              src="./images/color_2.png"
               onClick={() => setColor("#191a1c")}
               className={`color-div ${
                 color === "#191a1c" && "color-div-selected"
               } `}
             />
             <img
-              src='./images/color_3.png'
+              src="./images/color_3.png"
               onClick={() => setColor("#E0DDE6")}
               className={`color-div ${
                 color === "#E0DDE6" && "color-div-selected"
@@ -143,13 +143,8 @@ export function Model(props) {
       {groupRef.current && (activeState === 0 || activeState === 1) && (
         <CustomOrbitControl object={groupRef} />
       )}
-      <group ref={groupRef}>
-        <mesh>
-          <sphereBufferGeometry args={[1, 32, 32]} />
-          <meshStandardMaterial color={"#ff1242"} />
-        </mesh>
-      </group>
-      {/* <group dispose={null} scale={0.025} ref={groupRef}>
+
+      <group dispose={null} scale={0.025} ref={groupRef}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <mesh
             geometry={nodes.Body2002_face.geometry}
@@ -1090,7 +1085,7 @@ export function Model(props) {
           scale={10}
         />
         <mesh
-          name='back'
+          name="back"
           material-color={activeState === 1 ? color : "#dfebf7"}
           material-roughness={0.8}
           castShadow
@@ -1305,6 +1300,9 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
         />
+
+        {/* test pass */}
+
         <mesh
           geometry={nodes.Body16002.geometry}
           material={materials["F_12aecdedd27c4b60a55e7bef8977692d.002"]}
@@ -1389,6 +1387,7 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
         />
+        {/* 
         <mesh
           geometry={nodes.Body18002.geometry}
           material={materials["F_3096069787564a3393fe58b835f9cf45.003"]}
@@ -1396,6 +1395,10 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
         />
+       
+        
+        */}
+
         <mesh
           geometry={nodes.Body19.geometry}
           material={materials["Leather026.002"]}
@@ -1606,6 +1609,7 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
         />
+        {/* 1604 onwards */}
         <mesh
           geometry={nodes.Body26.geometry}
           material={materials["F_ea729722b3a64ad8873b5306f817f7c4.002"]}
@@ -2596,7 +2600,7 @@ export function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
           scale={10}
         />
-      </group> */}
+      </group>
     </group>
   );
 }
