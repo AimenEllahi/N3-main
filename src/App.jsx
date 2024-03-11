@@ -113,7 +113,7 @@ function App() {
               <Environment
                 //attach file
 
-                preset='apartment'
+                files='/potsdamer_platz_1k.hdr'
               />
               {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
               <ModelBlue setModelLoaded={setModelLoaded} />
