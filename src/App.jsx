@@ -2,13 +2,7 @@ import React, { useRef, Suspense, useState, useMemo } from "react";
 import "./App.css";
 // import LoaderComponent from "./Components/LoaderComponent";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {
-  Environment,
-  OrbitControls,
-  PresentationControls,
-  useProgress,
-  Html,
-} from "@react-three/drei";
+import { Environment, useProgress, Html } from "@react-three/drei";
 import { Model as ModelBlue } from "./Components/N1WHITE";
 import { TextureLoader } from "three";
 import useAnimationStore from "./Store/AnimationState";
@@ -36,7 +30,7 @@ function BackgroundBox() {
   const meshRef = useRef();
 
   const texture = useMemo(
-    () => new TextureLoader().load("./images/back.png"),
+    () => new TextureLoader().load("/images/back.png"),
     []
   );
 
