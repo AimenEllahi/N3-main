@@ -9,17 +9,17 @@ const colorArray = [
   {
     name: "Black",
     hex: "#191a1c",
-    imageUrl: "./images/color_2.png",
+    imageUrl: "/images/color_2.png",
   },
   {
     name: "White",
     hex: "#E0DDE6",
-    imageUrl: "./images/color_3.png",
+    imageUrl: "/images/color_3.png",
   },
 ];
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF("./Models/n1-white.glb");
+  const { nodes, materials } = useGLTF("/Models/n1-white.glb");
 
   const activeState = useAnimationStore((state) => state.activeState);
 
@@ -2595,7 +2595,7 @@ export function Model(props) {
   );
 }
 
-useGLTF.preload("./Models/n1-white.glb");
+useGLTF.preload("/Models/n1-white.glb");
 
 const CustomOrbitControl = ({ object }) => {
   const { gl, camera } = useThree();

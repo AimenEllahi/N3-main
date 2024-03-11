@@ -54,13 +54,13 @@ export default function Performance() {
       className='h-screen overflow-y-scroll w-full absolute top-0  bg-white z-[5] hide-scrollbar'
     >
       <PerformanceSection
-        background={"./N1_Assets/Performance/Charging/bg.png"}
+        background={"/N1_Assets/Performance/Charging/bg.png"}
         info={charging}
         isScroll
       />
 
       <PerformanceSection
-        background={"./N1_Assets/Performance/Snapdragon/bg.png"}
+        background={"/N1_Assets/Performance/Snapdragon/bg.png"}
         info={snapdragon}
       />
     </div>
