@@ -28,7 +28,7 @@ export default function Display() {
     <div
       ref={ref}
       style={{
-        backgroundImage: `url(./N1_Assets/Display/Bg.png)`,
+        backgroundImage: `url(/N1_Assets/Display/Bg.png)`,
       }}
       className='display-container'
     >
@@ -36,7 +36,7 @@ export default function Display() {
         <div className='display-icon-div'>
           <div className='display-img-div'>
             <img
-              src='./N1_Assets/Display/Amoledicon.svg'
+              src='/N1_Assets/Display/Amoledicon.svg'
               className='display-icon-img'
             />
           </div>

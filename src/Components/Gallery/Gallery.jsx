@@ -17,21 +17,21 @@ export default function Gallery() {
           <div className='left-gallery'>
             <div className='gallery-img gallery-img1'>
               <img
-                src='./images/P3_1.jpg'
+                src='/images/P3_1.jpg'
                 alt='Image 1'
                 className='gallery-image'
               />
             </div>
             <div className='gallery-img gallery-img2'>
               <img
-                src='./images/P3_2.jpg'
+                src='/images/P3_2.jpg'
                 alt='Image 2'
                 className='gallery-image'
               />
             </div>
             <div className='gallery-img gallery-img3'>
               <img
-                src='./images/P3_3.jpg'
+                src='/images/P3_3.jpg'
                 alt='Image 3'
                 className='gallery-image'
               />
@@ -41,21 +41,21 @@ export default function Gallery() {
           <div className='right-gallery'>
             <div className='gallery-img gallery-img4'>
               <img
-                src='./images/P3_4.jpg'
+                src='/images/P3_4.jpg'
                 alt='Image 4'
                 className='gallery-image'
               />
             </div>
             <div className='gallery-img gallery-img5'>
               <img
-                src='./images/P3_5.jpg'
+                src='/images/P3_5.jpg'
                 alt='Image 5'
                 className='gallery-image'
               />
             </div>
             <div className='gallery-img gallery-img6'>
               <img
-                src='./images/P3_6.jpg'
+                src='/images/P3_6.jpg'
                 alt='Image 6'
                 className='gallery-image'
               />

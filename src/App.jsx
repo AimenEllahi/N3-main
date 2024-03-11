@@ -90,7 +90,7 @@ function App() {
       {!modelLoaded && (
         <div className='absolute -top-0 left-0 max-w-screen w-screen overflow-hidden h-screen flex justify-center items-center'>
           <img
-            src={"./N1_Assets/Loaderbg.png"}
+            src={"/N1_Assets/Loaderbg.png"}
             style={{
               objectFit: "contain",
               height: "100vh",
@@ -119,7 +119,7 @@ function App() {
               <Environment
                 //attach file
 
-                files={"./potsdamer_platz_1k.hdr"}
+                preset='apartment'
               />
               {activeState !== 3 && activeState !== 2 && <BackgroundBox />}
               <ModelBlue setModelLoaded={setModelLoaded} />
@@ -158,14 +158,14 @@ function App() {
                   className='icon-container'
                   onClick={() => setActiveState(2)}
                 >
-                  <img src='./images/home_3.png' className='camera-img-icon' />
+                  <img src='/images/home_3.png' className='camera-img-icon' />
                   <div className='camera-icon-text'>Camera</div>
                 </div>
                 <div
                   className='icon-container'
                   onClick={() => setActiveState(3)}
                 >
-                  <img src='./images/home_2.png' className='ecran-img-icon' />
+                  <img src='/images/home_2.png' className='ecran-img-icon' />
                   <div className='ecran-icon-text'>Display</div>
                 </div>
                 <div
@@ -173,7 +173,7 @@ function App() {
                   onClick={() => setActiveState(4)}
                 >
                   <img
-                    src='./images/home_4.png'
+                    src='/images/home_4.png'
                     className='performance-img-icon'
                   />
                   <div className='performance-icon-text'>Performance</div>
