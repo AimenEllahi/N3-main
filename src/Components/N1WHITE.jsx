@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Html, PresentationControls, useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree, useLoader } from "@react-three/fiber";
 import { useControls } from "leva";
 import { gsap } from "gsap";
 import * as THREE from "three";
@@ -22,6 +22,15 @@ export function Model(props) {
   const { nodes, materials } = useGLTF("/Models/n1-white.glb");
 
   const activeState = useAnimationStore((state) => state.activeState);
+  const cameraTexture = useLoader(THREE.TextureLoader, "/images/camerahub.png");
+
+  cameraTexture.flipY = false;
+  cameraTexture.encoding = THREE.sRGBEncoding;
+  cameraTexture.anisotropy = 32;
+  //dont repeat, fit to mesh
+  cameraTexture.wrapS = cameraTexture.wrapT = THREE.ClampToEdgeWrapping;
+  cameraTexture.repeat.set(0.16, 0.16);
+  cameraTexture.offset.set(0.5, 1.05);
 
   const [color, setColor] = useState("#191a1c");
   const groupRef = useRef();
@@ -106,9 +115,9 @@ export function Model(props) {
     <group>
       {activeState === 1 && (
         <Html position={[window.innerWidth < 440 ? -0.3 : 0, 0, -9]}>
-          <div className="color-container">
+          <div className='color-container'>
             <span
-              className="color-header"
+              className='color-header'
               style={{
                 top: window.innerWidth < 440 ? "77%" : "84%",
               }}
@@ -124,14 +133,14 @@ export function Model(props) {
               } `}
             /> */}
             <img
-              src="./images/color_2.png"
+              src='./images/color_2.png'
               onClick={() => setColor("#191a1c")}
               className={`color-div ${
                 color === "#191a1c" && "color-div-selected"
               } `}
             />
             <img
-              src="./images/color_3.png"
+              src='./images/color_3.png'
               onClick={() => setColor("#E0DDE6")}
               className={`color-div ${
                 color === "#E0DDE6" && "color-div-selected"
@@ -1085,7 +1094,7 @@ export function Model(props) {
           scale={10}
         />
         <mesh
-          name="back"
+          name='back'
           material-color={activeState === 1 ? color : "#dfebf7"}
           material-roughness={0.8}
           castShadow
@@ -1387,17 +1396,19 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
         />
-        {/* 
+
         <mesh
           geometry={nodes.Body18002.geometry}
-          material={materials["F_3096069787564a3393fe58b835f9cf45.003"]}
           position={[0, -18.2, -0.97]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={10}
-        />
-       
-        
-        */}
+        >
+          <meshStandardMaterial
+            map={cameraTexture}
+            normalMap={cameraTexture}
+            attach='material'
+          />
+        </mesh>
 
         <mesh
           geometry={nodes.Body19.geometry}
